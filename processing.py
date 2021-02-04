@@ -1,7 +1,7 @@
 import classifier
 
 redundantChar = [',','.','!','?']
-
+commonWords = ["i", "to", "will", "of", "i'm", "does","a", "be","would","is", "should","you","what"]
 
 def cleanText(text,listOfChar):
     for i in listOfChar:
@@ -26,3 +26,12 @@ def makeDictionary(wordbag, dictionary, bag):
     for x in dictionary.keys():
         counted = classifier.countWord(x, bag)
         dictionary[x] = classifier.condProb(counted, bagWordCount, vocabCount)
+
+def removeCommonWords(setBag):
+    removableWords = []
+    for i in setBag:
+        for j in commonWords:
+            if i == j:
+                removableWords.append(i)
+    return set(setBag).difference(removableWords)
+

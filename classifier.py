@@ -44,10 +44,6 @@ def countWord(word, bag):
 
 # Gets name of prediction of each line
 def predict(words, outcomes):
-    # positive_probs = []
-    # neutral_probs = []
-    # negative_probs = []
-    
     words = words.split()
     clean_words = []
     for i in words:
